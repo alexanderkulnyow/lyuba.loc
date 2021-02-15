@@ -1,0 +1,162 @@
+/*!
+Theme Name: uni_italy
+Theme URI: http://underscores.me/
+Author: alexanderkulnyow
+Author URI: https://github.com/alexanderkulnyow
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: uni_italy
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+uni_italy is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+
+// Import variables and mixins.
+@import "abstracts/abstracts";
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+@import "generic/normalize";
+
+/* Box sizing
+--------------------------------------------- */
+@import "generic/box-sizing";
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "base/base";
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+// @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
+// @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "components/components";
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+
+/* Jetpack infinite scroll
+--------------------------------------------- */
+@import "plugins/jetpack/infinite-scroll";
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+/* Accessibility
+--------------------------------------------- */
+@import "utilities/accessibility";
+
+/* Alignments
+--------------------------------------------- */
+@import "utilities/alignments";
+
+
+//body {
+//  background-color: red;
+//}
+.custom-logo-link {
+  margin: 10px;
+  img {
+    height: auto !important;
+    width: 50px !important;
+  }
+}
+
+.badge-services {
+  background: $color__blue;
+  color: white;
+}
+
+@media screen and (max-width: 900px) {
+  .carousel-item {
+    height: 480px !important;
+  }
+  .carousel__caption {
+    left: 10% !important;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    top: 0;
+    transform: translateY(50%);
+    width: 80% !important;
+  }
+  .banner__title {
+    font-size: 2rem !important;
+    word-wrap: anywhere;
+  }
+  .banner__button {
+    font-size: 1rem !important;
+    padding: 7px 12px !important;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 765px) and (max-width: 1000px) {
+  .container-permission {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .blog__card {
+    flex-direction: column;
+  }
+  .testimonial__card {
+    padding: 10px;
+  }
+  .faq__card-header h4 {
+    font-weight: normal;
+    font-size: 18px;
+  }
+
+}

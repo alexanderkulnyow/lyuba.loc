@@ -1,0 +1,14 @@
+.widget {
+	margin: 0 0 1.5em;
+
+	ul, ol {
+		margin-left: 0 !important;
+		padding-left: 10px;
+		li {
+			padding: 3px;
+		}
+	}
+	select {
+		max-width: 100%;
+	}
+}

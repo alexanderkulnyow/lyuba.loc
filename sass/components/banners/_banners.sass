@@ -1,0 +1,33 @@
+.dds__banner
+  position: relative
+
+  .carousel-item
+    position: relative
+    height: 680px
+
+  .carousel__caption
+    text-align: left
+    width: 50%
+    position: absolute
+    font-size: 36px !important
+    color: black
+    max-height: 330px
+    top: 50%
+    transform: translateY(-50%)
+    left: 30%
+    .banner__title
+      margin-top: 0
+      font-size: 3rem
+      text-transform: uppercase
+    .banner__button
+      font-size: 1.5rem
+      padding: 10px 15px
+      border: 3px solid $color__red
+      color: $color__red
+      text-align: left
+      &:hover
+        transition: background-color 1s
+        text-decoration: none
+        background-color: $color__red
+        color: white
+

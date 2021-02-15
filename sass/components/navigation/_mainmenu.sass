@@ -1,0 +1,95 @@
+.site-header
+    position: relative
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-items: center
+    //box-shadow: gray 2px 2px 2px
+    z-index: 99999999 !important
+
+    .site-branding
+
+        flex: 2
+        h1.custom_logo_text
+            font-size: 26px
+            color: $color__green
+    .main-navigation
+        flex: 3
+    .header__social
+        flex: 1
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        a
+            color: black
+            &:hover
+                text-decoration: none
+                color: $color__green
+        .dashicons
+            font-size: 25px
+            height: 25px
+
+    #primary-menu
+        flex-direction: row
+        justify-content: space-around
+        li
+            a
+                color: #000
+                font-weight: 600
+                &:after
+                    content: ''
+                    background-color: $color__green
+                    height: 20px
+                    width: 50%
+                    position: absolute
+                    top: 50%
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    opacity: 0
+                    border: 1px solid $color__green
+                        radius: 5px
+
+                &:visited
+                    color: black
+                &:hover
+                    &:after
+                        opacity: 0.5
+//text-decoration: underline
+#site-navigation.toggled
+
+    .menu-menu-1-container
+        order: 1
+        position: fixed
+        top: 0
+        left: 0
+        width: 100vw
+        height: 100vh
+        background: $color__background-body
+        z-index: 50
+        display: flex
+        flex-direction: column
+        align-items: center
+        overflow: hidden
+        ul
+            display: flex
+            flex-direction: column
+            align-items: center
+            margin-top: 40%
+            //transform: translateY(-50%)
+            li
+                padding: 20px
+
+
+
+.header__social
+
+.menu-toggle
+    position: absolute
+    top: 30px
+    right: 35px
+    background: none
+    border: 2px solid black
+    z-index: 9999999999
+@media screen and (min-width: 37.5em)
+  #primary-menu
+    display: flex

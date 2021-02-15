@@ -1,0 +1,19 @@
+h1, h2, h3, h4, h5, h6
+	clear: both
+
+h2
+	width: fit-content
+	position: relative
+	margin: 70px 0 40px
+	&:after
+		content: ''
+		background-color: $color__blue
+		height: 100%
+		width: 50%
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -35%)
+		opacity: 0.3
+		border: 1px solid $color__blue
+			radius: 20px
