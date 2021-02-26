@@ -11,8 +11,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main container">
-        <div class="row">
-            <div class="col-12 col-md-9">
+
 	            <?php
 	            while ( have_posts() ) :
 		            the_post();
@@ -32,12 +31,6 @@ get_header();
 
 	            endwhile; // End of the loop.
 	            ?>
-            </div>
-            <aside class="col-12 col-md-3">
-                <?php get_sidebar();?>
-            </aside>
-        </div>
-
 
 
 	</main><!-- #main -->

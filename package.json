@@ -1,8 +1,8 @@
 {
-  "name": "underscores",
+  "name": "uni_itali",
   "version": "1.0.0",
   "description": "Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.",
-  "author": "Automattic Theme Team",
+  "author": "Alexander Kuknyow",
   "license": "GPL-2.0-or-later",
   "keywords": [
     "WordPress",
@@ -20,7 +20,20 @@
     "@wordpress/scripts": "^12.1.0",
     "dir-archiver": "^1.1.1",
     "node-sass": "^4.14.1",
-    "rtlcss": "^2.5.0"
+    "rtlcss": "^2.5.0",
+    "@ffflorian/jszip-cli": "^3.1.0",
+    "autoprefixer": "^9.7.4",
+    "browser-sync": "^2.26.7",
+    "copyfiles": "^2.2.0",
+    "cssnano": "^4.1.10",
+    "jshint": "^2.11.0",
+    "make-dir-cli": "^2.0.0",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^6.1.0",
+    "postcss-cli": "^7.1.0",
+    "rimraf": "^3.0.2",
+    "uglify-js": "^3.8.0",
+    "wp-pot-cli": "^1.3.0"
   },
   "rtlcssConfig": {
     "options": {
@@ -35,8 +48,15 @@
     "plugins": [],
     "map": false
   },
+  "browser-sync1": {
+
+      "proxy": "https://lyuba.loc"
+
+  },
+
   "scripts": {
     "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
+    "serve": "browser-sync start --proxy \"https://lyuba.loc\" --port 3002   --https \"key: E:/Server/userdata/config/cert_files/localhost/localhost-server.key, cert: E:/Server/userdata/config/cert_files/localhost/localhost-server.crt\",\n            }, --reload-delay 4000 --files \"*.css, js/*.js, **/*.php, languages/*.pot, languages/*.po, !node_modules/**/*.html, !bower_components*.*\"",
     "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",

@@ -16,6 +16,18 @@
  *
  * @uses uni_italy_header_style()
  */
+function uni_italy_custom_logo_setup() {
+	$defaults = array(
+		'height'      => 100,
+		'width'       => 100,
+		'flex-height' => false,
+		'flex-width'  => false,
+		'header-text' => array( 'site-title', 'site-description' ),
+		'unlink-homepage-logo' => false,
+	);
+	add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'uni_italy_custom_logo_setup' );
 function uni_italy_custom_header_setup() {
 	add_theme_support(
 		'custom-header',

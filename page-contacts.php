@@ -19,7 +19,7 @@ get_header();
         </div>
         <div class="row">
             <div class="col-12 col-md-4">
-                <p>Есть вопросы? СВяжитесь со мной!</p>
+                <p>Есть вопросы? Свяжитесь со мной!</p>
 
                 <div class="contact-page__icons">
                     <div class="contact-page__icons-wrapper">
@@ -34,11 +34,14 @@ get_header();
 
 
             </div>
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-5">
                 <p>Или заполните форму.</p>
 		        <?php
 		        echo do_shortcode( '[contact-form-7 id="2510" title="Контакты"]' ) ?>
             </div>
+            <aside class="col-12 col-md-3">
+		        <?php get_sidebar(); ?>
+            </aside>
 
 
         </div>

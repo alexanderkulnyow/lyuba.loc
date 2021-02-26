@@ -8,10 +8,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
-		if ( 'post' === get_post_type() ) :
+		if ( 'product' === get_post_type() ) :
 		endif; ?>
 	</header>
-    <!-- .entry-header -->
+	<!-- .entry-header -->
 	<div class="blog__card w-100">
 		<div class="blog__card__thumbnail">
 			<?php
@@ -55,11 +55,11 @@
 			</div>
 			<div class="blog__card__footer">
 				<div class="">
-<!--					--><?php //uni_italy_entry_footer1(); ?>
+					<!--					--><?php //uni_italy_entry_footer1(); ?>
 				</div>
 
 				<a href="<?php echo get_permalink(); ?>" class="btn__blog__card__footer">Подробней</a>
 			</div>
 		</div>
 	</div>
-	</article>
+</article>

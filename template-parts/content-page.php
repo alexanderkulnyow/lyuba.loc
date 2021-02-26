@@ -13,21 +13,24 @@
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
+    <div class="row">
+        <div class="col-12 col-md-9">
+	        <?php
+	        the_content();
 
-	<?php uni_italy_post_thumbnail(); ?>
+	        wp_link_pages(
+		        array(
+			        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uni_italy' ),
+			        'after'  => '</div>',
+		        )
+	        );
+	        ?>
+        </div>
+        <aside class="col-12 col-md-3">
+			<?php get_sidebar(); ?>
+        </aside>
+    </div>
 
-	<div class="entry-content">
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uni_italy' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">

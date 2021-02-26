@@ -40,3 +40,12 @@
 @import "card/testimonial_card";
 
 @import "footer/footer";
+
+/* the slides */
+.slick-slide {
+  margin: 0 27px;
+}
+/* the parent */
+.slick-list {
+  margin: 0 -27px;
+}

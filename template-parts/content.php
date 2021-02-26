@@ -23,7 +23,7 @@
 			<div class="entry-meta">
 				<?php
 				uni_italy_posted_on();
-				uni_italy_posted_by();
+//				uni_italy_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -31,31 +31,39 @@
 
 	<?php uni_italy_post_thumbnail(); ?>
 
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'uni_italy' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
+	<div class="entry-content container">
+        <div class="row">
+            <div class="col-12 col-md-9">
+	            <?php
+	            the_content(
+		            sprintf(
+			            wp_kses(
+			            /* translators: %s: Name of current post. Only visible to screen readers */
+				            __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'uni_italy' ),
+				            array(
+					            'span' => array(
+						            'class' => array(),
+					            ),
+				            )
+			            ),
+			            wp_kses_post( get_the_title() )
+		            )
+	            );
 
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uni_italy' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
+	            wp_link_pages(
+		            array(
+			            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uni_italy' ),
+			            'after'  => '</div>',
+		            )
+	            );
+	            ?>
+            </div><!-- .entry-content -->
+            </div>
+            <aside class="col-12 col-md-3">
+		        <?php get_sidebar();?>
+            </aside>
+        </div>
+
 
 	<footer class="entry-footer">
 		<?php uni_italy_entry_footer(); ?>

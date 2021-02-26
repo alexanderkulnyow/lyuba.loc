@@ -76,8 +76,14 @@ jQuery('.post__wrapper').slick({
         // instead of a settings object
     ]
 
+
+
 });
 
 console.log('Designed by Alexander Kulnyow https://dds.by')
+
+
+
+
 
 //# sourceMappingURL=main.js.map
