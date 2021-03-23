@@ -24,7 +24,7 @@ if ( ! is_a( $product, 'WC_Product' ) ) {
 	return;
 }
 ?>
-<li class="lyuba__widget-product mb-5">
+<li class="lyuba__widget-product border mb-5 p-2">
 	<?php do_action( 'woocommerce_widget_product_item_start', $args ); ?>
     <a href="<?php echo esc_url( $product->get_permalink() ); ?>">
 		<?php echo $product->get_image( 'medium' ); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
@@ -39,6 +39,10 @@ if ( ! is_a( $product, 'WC_Product' ) ) {
 
     <div class="text-right m">
 		<?php echo $product->get_price_html(); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+    </div>
+
+    <div class="d-flex justify-content-end pt-2">
+        <a href="<?php echo get_the_permalink(); ?>" style="color: #55abf4;">Подробнее</a>
     </div>
 
 

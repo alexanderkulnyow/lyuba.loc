@@ -75,8 +75,8 @@
 				?>
             </nav><!-- #site-navigation -->
             <div class="header__icons d-none d-md-flex">
-                <a href="https://instagram.com/uni_lyuba"><span class="dashicons dashicons-instagram"></span></a>
-                <a href=""><span class="dashicons dashicons-whatsapp"></span></a>
+                <a href="<?php echo nl2br( esc_html( get_theme_mod( 'lyuba__inst-set' ) ) )?>"><span class="dashicons dashicons-instagram"></span></a>
+                <a href=" https://wa.me/<?php echo nl2br( esc_html( get_theme_mod( 'lyuba__tel-set' ) ) )?>"><span class="dashicons dashicons-whatsapp"></span></a>
             </div>
         </div>
 

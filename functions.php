@@ -9,11 +9,11 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.13' );
+	define( '_S_VERSION', '1.0.25' );
 }
-add_filter( 'get_the_archive_title', function( $title ){
-	return preg_replace('~^[^:]+: ~', '', $title );
-});
+add_filter( 'get_the_archive_title', function ( $title ) {
+	return preg_replace( '~^[^:]+: ~', '', $title );
+} );
 update_option( 'medium_crop', 1 );
 if ( ! function_exists( 'uni_italy_setup' ) ) :
 	/**
@@ -111,7 +111,6 @@ add_action( 'after_setup_theme', 'uni_italy_setup' );
 if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'blog-thumbnails', 300, 260, true ); // 300 в ширину и без ограничения в высоту
 }
-
 
 
 /**
@@ -215,13 +214,13 @@ function services__banner() {
 	?>
     <div id="Wp_Bootstrap_Carousel" class="row carousel slide" data-ride="carousel" data-interval="1000000">
 		<?php
-		$count__publish = wp_count_posts( 'services' )->publish;
+		$count__publish = wp_count_posts( 'product' )->publish;
 		if ( $count__publish > 1 ) {
 			?>
             <ol class="carousel-indicators">
 				<?php
 				$query = new WP_Query( array(
-					'post_type' => 'services'
+					'post_type' => 'product'
 				) );
 				?>
 				<?php if ( $query->have_posts() ) : ?>
@@ -257,7 +256,7 @@ function services__banner() {
             </style>
 			<?php
 			$args  = array(
-				'post_type' => 'services',
+				'post_type' => 'product',
 			);
 			$query = new WP_Query( $args );
 			?>
@@ -325,30 +324,26 @@ function services_card() {
 	) );
 
 	?>
-    <div class="row product__wrapper">
+    <div class="row product__wrapper justify-content-center">
 		<?php
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
 				$query->the_post();
 				?>
 
-                    <div class="card services__card" style="">
-                        <div class="services__card-header">
-                            <h4><?php the_title(); ?></h4>
-
-                        </div>
-                        <div class="services__card-body">
-<!--                            <ul class="list-group list-group-flush">-->
-                                <?php
-                                the_excerpt();
-                                ?>
-
-
-                        </div>
-                        <div class="services__card-footer">
-                            <a href="<?php echo get_the_permalink(); ?>" class="btn btn-services">Подробнее</a>
-                        </div>
+                <div class="card services__card" style="">
+                    <div class="services__card-header">
+						<?php the_post_thumbnail( 'medium', array( 'class' => 'w-100' ) ); ?>
                     </div>
+                    <div class="services__card-body">
+                        <h4><?php the_title(); ?></h4>
+						<?php the_excerpt(); ?>
+                    </div>
+                    <div class="services__card-footer align-self-end w-100">
+	                    <?php woocommerce_template_single_price(); ?>
+                        <a href="<?php echo get_the_permalink(); ?>" class="btn btn-services">Подробнее</a>
+                    </div>
+                </div>
 
 				<?php
 			}
@@ -513,7 +508,6 @@ if ( ! function_exists( 'uni_italy_posted_on1' ) ) :
 		);
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
 	}
 endif;
 
@@ -524,5 +518,16 @@ endif;
 //remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 //add_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper_1', 10);
 
-remove_action(
-        'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+
+// not purchasable
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+remove_action( 'woocommerce_simple_add_to_cart', 'woocommerce_simple_add_to_cart', 30 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_simple_add_to_cart', 30 );
+remove_action( 'woocommerce_grouped_add_to_cart', 'woocommerce_grouped_add_to_cart', 30 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_arena_single_price', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_simple_add_to_cart', 30 );
+// not purchasable end
+

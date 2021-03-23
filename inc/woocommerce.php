@@ -21,12 +21,11 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'uni_italy_woocommerce_cart_lin
 add_filter( 'woocommerce_breadcrumb_defaults', 'wcc_change_breadcrumb_home_text' );
 
 
-
-
 function wcc_change_breadcrumb_home_text( $defaults ) {
 	// Change the breadcrumb home text from 'Home' to 'Apartment'
 	$defaults['wrap_before'] = '<div class="col-12">';
-    $defaults['wrap_after'] = '</div>';
+	$defaults['wrap_after']  = '</div>';
+
 	return $defaults;
 }
 
@@ -71,7 +70,6 @@ function uni_italy_woocommerce_setup() {
 }
 
 
-
 /**
  * WooCommerce specific scripts & stylesheets.
  *
@@ -94,7 +92,6 @@ function uni_italy_woocommerce_scripts() {
 
 	wp_add_inline_style( 'uni_italy-woocommerce-style', $inline_font );
 }
-
 
 
 /**
@@ -121,7 +118,6 @@ function uni_italy_woocommerce_active_body_class( $classes ) {
 }
 
 
-
 /**
  * Related Products Args.
  *
@@ -139,7 +135,6 @@ function uni_italy_woocommerce_related_products_args( $args ) {
 
 	return $args;
 }
-
 
 
 if ( ! function_exists( 'uni_italy_woocommerce_wrapper_before' ) ) {
@@ -261,3 +256,31 @@ if ( ! function_exists( 'uni_italy_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+add_action( 'woocommerce_single_product_summary', 'uni_italy_single_product_registration', 90 );
+function uni_italy_single_product_registration() {
+	?>
+    <div class="d-flex justify-content-end mb-5">
+        <button type="button" class="btn btn btn-services" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Заказать</button>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content " style="z-index: 99999999999 !important;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Заказать <?php echo esc_html( get_the_title() );?></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <?php echo do_shortcode('[contact-form-7 id="2533" title="Гайд"]')?>
+
+                </div>
+            </div>
+        </div>
+    </div>
+	<?php
+}
+
+

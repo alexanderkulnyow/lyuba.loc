@@ -88,6 +88,13 @@ ul.products {
   .single-product div.product .woocommerce-product-gallery {
     position: relative;
     float: left; }
+    .single-product div.product .woocommerce-product-gallery figure {
+      width: 100%;
+      height: auto; }
+      .single-product div.product .woocommerce-product-gallery figure a {
+        width: 100%; }
+        .single-product div.product .woocommerce-product-gallery figure a img {
+          width: 100% !important; }
     .single-product div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger {
       position: absolute;
       top: 2em;

@@ -60,11 +60,11 @@ get_header();
             <div class="guide__filter"></div>
             <div class="container">
                 <div class="row guide__content">
-                    <div class="col-12 d-flex flex-column justify-content-center">
-                        <h2 class="text-center wow animate__bounceInRight"><?php echo nl2br( esc_html( get_theme_mod( 'lyuba__guiede-title' ) ) )?></h2>
-                        <p class="text-center"><?php echo nl2br( esc_html( get_theme_mod( 'lyuba__guiede-description' ) ) )?></p>
+                    <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+                        <h2 class="guide__header text-center wow animate__bounceInRight"><?php echo nl2br( esc_html( get_theme_mod( 'lyuba__guiede-title' ) ) )?></h2>
+                        <p class="guide__description text-center"><?php echo nl2br( esc_html( get_theme_mod( 'lyuba__guiede-description' ) ) )?></p>
 
-                        <div class="guide__footer">
+                        <div class="guide__file guide__footer">
                             <a href="<?php echo nl2br( esc_html( get_theme_mod( 'lyuba__guiede-file' ) ) )?>">Скачать</a>
                         </div>
 

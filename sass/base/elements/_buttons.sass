@@ -1,15 +1,17 @@
 button, input[type="button"], input[type="reset"], input[type="submit"]
   border: 1px solid
-  border-color: $color__border-button
+  border-color: $color__blue
   border-radius: 3px
-  background: $color__background-button
-  color: rgba(0, 0, 0, 0.8)
+  background: $color__blue
+  color: white
   line-height: 1
-  padding: 0.6em 1em 0.4em
+  padding: 0.6em 1em
   &:hover
-    border-color: $color__border-button-hover
+    background-color: $color__red
+    border-color: $color__orange
   &:active, &:focus
-    border-color: $color__border-button-focus
+    background-color: $color__red
+    border-color: $color__orange
 
 
 .btn-services
@@ -24,3 +26,31 @@ button, input[type="button"], input[type="reset"], input[type="submit"]
   background: none
   border: 2px solid $color__blue
   padding: 5px 10px
+
+.nav-item >a
+  border: 1px solid
+  border-color: $color__blue
+  border-radius: 10px 10px 0 0
+  background: $color__blue
+  color: white
+  line-height: 1
+  padding: 0.6em 1em
+  &:hover
+    color: white
+    background-color: $color__red
+    border-color: $color__orange
+  &:active, &:focus
+    color: white
+    background-color: $color__red
+    border-color: $color__orange
+
+button.menu-toggle
+  color: black
+  &:hover
+    background-color: white
+    border-color: $color__orange
+    color: black
+  &:active, &:focus
+    background-color: white
+    border-color: $color__orange
+    color: black

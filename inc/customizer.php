@@ -25,7 +25,7 @@ function uni_italy_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'lyuba__guiede-title', // id
 		array(
-			'default'   => 'Инструкция по поутсуплению в Италию', // значение по умолчанию
+			'default'   => 'Заголовок секции', // значение по умолчанию
 			'transport' => $dds_transport
 		)
 	);
@@ -43,13 +43,13 @@ function uni_italy_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'lyuba__guiede-description', // id
 		array(
-			'default'   => 'БОНУС! Глава “Первые дни в Италии: как найти жильё и подключить интернет”.', // значение по умолчанию
+			'default'   => 'Описание секции', // значение по умолчанию
 			'transport' => $dds_transport
 		)
 	);
 
 	$wp_customize->add_control(
-		'lyuba__guiede-description1', //id
+		'lyuba__guiede-description', //id
 		array(
 			'type'     => 'textarea',
 			'label'    => 'Заголовок блока', // title
@@ -69,7 +69,7 @@ function uni_italy_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Upload_Control(
 			$wp_customize,
-			'lyuba__guiede-file-picker', //id
+			'lyuba__guiede-file', //id
 			array(
 				'label'    => 'Пробная версия', // title
 				'settings' => 'lyuba__guiede-file', // id настроек
@@ -77,6 +77,15 @@ function uni_italy_customize_register( $wp_customize ) {
 			)
 		)
 	);
+//	bg guide
+	$wp_customize->add_setting(
+		'lyuba__guiede-bg', // id
+		array(
+			'default'   => '', // значение по умолчанию
+			'transport' => $dds_transport
+		)
+	);
+
 //	bg guide
 	$wp_customize->add_setting(
 		'lyuba__guiede-bg', // id
@@ -97,7 +106,66 @@ function uni_italy_customize_register( $wp_customize ) {
 			)
 		)
 	);
+	$wp_customize->add_section(
+		'lyuba__social', // id секции, должен прописываться во всех настройках, которые в неё попадают
+		array(
+			'title'       => 'Контакты',
+			'priority'    => 201, // приоритет расположения относительно других секций
+			'description' => 'Контакты' // описание не обязательное
+		)
+	);
+	$wp_customize->add_setting(
+		'lyuba__tel-set', // id
+		array(
+			'default'   => '', // значение по умолчанию
+			'transport' => $dds_transport
+		)
+	);
 
+	$wp_customize->add_control(
+		'lyuba__tel', //id
+		array(
+			'label'    => '# телефона', // title
+			'settings' => 'lyuba__tel-set', // id настроек
+			'section'  => 'lyuba__social' // id секции
+		)
+
+	);
+	$wp_customize->add_setting(
+		'lyuba__email-set', // id
+		array(
+			'default'   => '', // значение по умолчанию
+			'transport' => $dds_transport
+		)
+	);
+
+	$wp_customize->add_control(
+		'lyuba__email', //id
+		array(
+			'label'    => 'email', // title
+			'settings' => 'lyuba__email-set', // id настроек
+			'section'  => 'lyuba__social' // id секции
+		)
+
+	);
+
+	$wp_customize->add_setting(
+		'lyuba__inst-set', // id
+		array(
+			'default'   => '', // значение по умолчанию
+			'transport' => $dds_transport
+		)
+	);
+
+	$wp_customize->add_control(
+		'lyuba__inst', //id
+		array(
+			'label'    => 'instagram', // title
+			'settings' => 'lyuba__inst-set', // id настроек
+			'section'  => 'lyuba__social' // id секции
+		)
+
+	);
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -118,12 +186,30 @@ function uni_italy_customize_register( $wp_customize ) {
 				'render_callback' => 'uni_italy_customize_partial_blogdescription',
 			)
 		);
-//		$wp_customize->selective_refresh->add_partial( 'lyuba__guiede-bg', array(
-//			'selector'        => '.lyuba__guiede-bg',
+		$wp_customize->selective_refresh->add_partial( 'lyuba__guiede-bg', array(
+			'selector' => '.lyuba__guiede-bg',
 //			'render_callback' => function () use ( $day ) {
 //				return nl2br( esc_html( get_theme_mod( $day ) ) );
 //			}
-//		) );
+		) );
+		$wp_customize->selective_refresh->add_partial( 'lyuba__guiede-title', array(
+			'selector' => '.guide__header',
+//			'render_callback' => function () use ( $day ) {
+//				return nl2br( esc_html( get_theme_mod( $day ) ) );
+//			}
+		) );
+		$wp_customize->selective_refresh->add_partial( 'lyuba__guiede-description', array(
+			'selector' => '.guide__description',
+//			'render_callback' => function () use ( $day ) {
+//				return nl2br( esc_html( get_theme_mod( $day ) ) );
+//			}
+		) );
+		$wp_customize->selective_refresh->add_partial( 'lyuba__guiede-file', array(
+			'selector' => '.guide__file',
+//			'render_callback' => function () use ( $day ) {
+//				return nl2br( esc_html( get_theme_mod( $day ) ) );
+//			}
+		) );
 	}
 }
 

@@ -47,16 +47,16 @@
                 <div class="col-6 col-lg-3 order-2 order-sm-3 order-lg-2 no-logo footer__contacts">
                     <h5>Контакты</h5>
                     <ul class="list-unstyled">
-                        <li><span class="dashicons dashicons-phone"></span><a class="text-muted" href="#">+375252555</a></li>
-                        <li><span class="dashicons dashicons-email-alt"></span><a class="text-muted" href="#">lyuba@lyuba.by</a></li>
+                        <li><span class="dashicons dashicons-phone"></span><a class="text-muted" href="tel:<?php echo nl2br( esc_html( get_theme_mod( 'lyuba__tel-set' ) ) )?>"><?php echo nl2br( esc_html( get_theme_mod( 'lyuba__tel-set' ) ) )?></a></li>
+                        <li><span class="dashicons dashicons-email-alt"></span><a class="text-muted" href="mailto:<?php echo nl2br( esc_html( get_theme_mod( 'lyuba__email-set' ) ) )?>"><?php echo nl2br( esc_html( get_theme_mod( 'lyuba__email-set' ) ) )?></a></li>
                         <div class="footer__social ">
-                            <a href="https://instagram.com/uni_lyuba"><span class="dashicons dashicons-instagram"></span></a>
-                            <a href=""><span class="dashicons dashicons-whatsapp"></span></a>
+                            <a href="<?php echo nl2br( esc_html( get_theme_mod( 'lyuba__inst-set' ) ) )?>"><span class="dashicons dashicons-instagram"></span></a>
+                            <a href="https://wa.me/<?php echo nl2br( esc_html( get_theme_mod( 'lyuba__tel-set' ) ) )?>"><span class="dashicons dashicons-whatsapp"></span></a>
                         </div>
                     </ul>
                 </div>
                 <div class="col-12 col-sm-6  col-lg-2 order-3 order-sm-1 order-lg-3 no-logo">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim…</p>
+                    <p>Привет, меня зовут Люба. И я помогу тебе поступить в Италию</p>
                 </div>
             </div>
 

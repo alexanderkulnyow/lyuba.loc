@@ -1,50 +1,50 @@
 <?php
 add_action( 'init', 'register_lyuba_post_types' );
 function register_lyuba_post_types() {
-	register_post_type( 'services', array(
-		'label'              => null,
-		'labels'             => array(
-			'name'               => 'Услуги', // основное название для типа записи
-			'singular_name'      => 'Услуга', // название для одной записи этого типа
-			'add_new'            => 'Добавить услугу', // для добавления новой записи
-			'add_new_item'       => 'Добавление услуги', // заголовка у вновь создаваемой записи в админ-панели.
-			'edit_item'          => 'Редактирование услуги', // для редактирования типа записи
-			'new_item'           => 'Новая услуга', // текст новой записи
-			'view_item'          => 'Смотреть услугу', // для просмотра записи этого типа.
-			'search_items'       => 'Искать ____', // для поиска по этим типам записи
-			'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
-			'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
-			'menu_name'          => 'Услуги', // название меню
-		),
-		'description'        => '',
-		'public'             => true,
-		'publicly_queryable' => true,
-		// зависит от public
-		// 'exclude_from_search' => null, // зависит от public
-		'show_ui'            => true,
-		// зависит от public
-		// 'show_in_nav_menus'   => null, // зависит от public
-		'show_in_menu'       => true,
-		// показывать ли в меню адмнки
-		// 'show_in_admin_bar'   => null, // зависит от show_in_menu
-		'show_in_rest'       => true,
-		// добавить в REST API. C WP 4.7
-		'rest_base'          => null,
-		// $post_type. C WP 4.7
-		'menu_position'      => 5,
-		'menu_icon'          => 'dashicons-buddicons-replies',
-		'capability_type'    => 'post',
-//		'capabilities'      => 'menus', // массив дополнительных прав для этого типа записи
-		'map_meta_cap'       => true,
-		// Ставим true чтобы включить дефолтный обработчик специальных прав
-		'hierarchical'       => false,
-		'supports'           => [ 'title', 'editor', 'thumbnail', 'custom-fields', 'excerpt' ],
-		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-		'taxonomies'         => array(),
-		'has_archive'        => false,
-		'rewrite'            => true,
-		'query_var'          => true,
-	) );
+//	register_post_type( 'services', array(
+//		'label'              => null,
+//		'labels'             => array(
+//			'name'               => 'Услуги', // основное название для типа записи
+//			'singular_name'      => 'Услуга', // название для одной записи этого типа
+//			'add_new'            => 'Добавить услугу', // для добавления новой записи
+//			'add_new_item'       => 'Добавление услуги', // заголовка у вновь создаваемой записи в админ-панели.
+//			'edit_item'          => 'Редактирование услуги', // для редактирования типа записи
+//			'new_item'           => 'Новая услуга', // текст новой записи
+//			'view_item'          => 'Смотреть услугу', // для просмотра записи этого типа.
+//			'search_items'       => 'Искать ____', // для поиска по этим типам записи
+//			'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
+//			'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
+//			'menu_name'          => 'Услуги', // название меню
+//		),
+//		'description'        => '',
+//		'public'             => true,
+//		'publicly_queryable' => true,
+//		// зависит от public
+//		// 'exclude_from_search' => null, // зависит от public
+//		'show_ui'            => true,
+//		// зависит от public
+//		// 'show_in_nav_menus'   => null, // зависит от public
+//		'show_in_menu'       => true,
+//		// показывать ли в меню адмнки
+//		// 'show_in_admin_bar'   => null, // зависит от show_in_menu
+//		'show_in_rest'       => true,
+//		// добавить в REST API. C WP 4.7
+//		'rest_base'          => null,
+//		// $post_type. C WP 4.7
+//		'menu_position'      => 5,
+//		'menu_icon'          => 'dashicons-buddicons-replies',
+//		'capability_type'    => 'post',
+////		'capabilities'      => 'menus', // массив дополнительных прав для этого типа записи
+//		'map_meta_cap'       => true,
+//		// Ставим true чтобы включить дефолтный обработчик специальных прав
+//		'hierarchical'       => false,
+//		'supports'           => [ 'title', 'editor', 'thumbnail', 'custom-fields', 'excerpt' ],
+//		// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+//		'taxonomies'         => array(),
+//		'has_archive'        => false,
+//		'rewrite'            => true,
+//		'query_var'          => true,
+//	) );
 	register_post_type( 'faq', array(
 		'label'              => null,
 		'labels'             => array(

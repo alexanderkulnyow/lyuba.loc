@@ -20,6 +20,7 @@ a {
 		outline: 0;
 	}
 	.read__more:after {
+		color: $color__blue !important;
 		content: "->";
 
 	}
