@@ -5,7 +5,7 @@ Theme URI: http://underscores.me/
 Author: alexanderkulnyow
 Author URI: https://github.com/alexanderkulnyow
 Description: Description
-Version: 1.0.0
+Version: 1.0.1
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -531,6 +531,15 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     background-color: #E56B80;
     border-color: #e9ecff; }
 
+.btn-services-1 {
+  background: none;
+  color: #4eaddb !important;
+  border: 1px solid #4eaddb; }
+  .btn-services-1:hover {
+    background-color: #4eaddb;
+    border-color: #4eaddb;
+    color: white !important; }
+
 .btn__blog__card__footer {
   color: #4eaddb;
   background: none;
@@ -851,7 +860,7 @@ textarea {
   .dds__banner .carousel-item {
     position: relative;
     height: 680px;
-    background-color: rgba(78, 173, 219, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
     -webkit-backdrop-filter: opacity(20%);
             backdrop-filter: opacity(20%); }
   .dds__banner .carousel__caption {
@@ -906,7 +915,7 @@ textarea {
   margin: 0 0 1.5em; }
 
 .permissions {
-  background-color: rgba(233, 236, 255, 0.4);
+  background-color: #fff;
   padding: 20px 0; }
 
 .permission {
@@ -1072,7 +1081,7 @@ textarea {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 600px;
+  height: 610px;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
@@ -1082,7 +1091,7 @@ textarea {
   overflow: hidden; }
 
 .services__card-header {
-  max-height: 300px;
+  height: 300px;
   border-bottom: 3px solid #e9ecff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1105,7 +1114,8 @@ textarea {
 
 .services__card-body {
   height: 220px;
-  padding-top: 17px;
+  padding: 15px 0;
+  margin-bottom: 15px;
   overflow: hidden; }
 
 .services__card-footer {
@@ -1329,7 +1339,7 @@ time.post__time {
 
 .front__testimonials {
   padding-bottom: 30px;
-  background-color: #e9ecff; }
+  background-color: rgba(233, 236, 255, 0.2); }
 
 .testimonial__card {
   padding: 40px;
@@ -1360,7 +1370,8 @@ time.post__time {
 
 footer.site-footer {
   padding-top: 40px;
-  background-color: #e9ecff; }
+  background-color: #555555;
+  color: #f1f1f1; }
   footer.site-footer .no-logo {
     margin-top: 10px; }
   footer.site-footer .list-unstyled {
@@ -1368,7 +1379,7 @@ footer.site-footer {
     margin-left: 0;
     padding-left: 0; }
     footer.site-footer .list-unstyled a {
-      color: #000; }
+      color: #f1f1f1; }
 
 .footer__contacts span {
   font-size: 22px; }
@@ -1394,7 +1405,7 @@ footer.site-footer {
           align-items: center; }
   .footer__contacts li a {
     padding-left: 10px;
-    color: #000 !important; }
+    color: #f1f1f1 !important; }
 
 .footer__contacts .footer__social {
   display: -webkit-box;
@@ -1453,14 +1464,14 @@ footer.site-footer {
   margin-right: 40px; }
 
 .contact-page__icons a {
-  font-size: 20px;
-  color: #000;
+  font-size: 1rem;
+  color: #f1f1f1;
   text-decoration: none;
   cursor: pointer; }
   .contact-page__icons a:visited {
-    color: #000; }
+    color: #f1f1f1; }
   .contact-page__icons a:hover {
-    color: #000; }
+    color: #f1f1f1; }
 
 /* the slides */
 .slick-slide {
@@ -1510,6 +1521,9 @@ footer.site-footer {
         color: white;
         background-color: #6aad8e;
         border-color: #e9ecff; }
+
+.lyuba__breadcrumbs a {
+  color: black !important; }
 
 /*--------------------------------------------------------------
 # Plugins
@@ -1644,7 +1658,7 @@ footer.site-footer {
     font-size: 18px; } }
 
 .dds a {
-  color: #4eaddb !important; }
+  color: #f1f1f1 !important; }
 
 body {
   margin: 0 !important; }

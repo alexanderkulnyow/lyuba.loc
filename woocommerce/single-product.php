@@ -41,7 +41,7 @@ do_action( 'woocommerce_before_main_content' );
 		<?php endwhile; // end of the loop. ?>
     </div>
     <aside class="col-12 col-md-3">
-		<?php get_sidebar(); ?>
+		<?php get_sidebar('Single_Prod'); ?>
     </aside>
 <?php
 /**

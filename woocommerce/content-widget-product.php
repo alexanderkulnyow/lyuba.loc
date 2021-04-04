@@ -24,22 +24,22 @@ if ( ! is_a( $product, 'WC_Product' ) ) {
 	return;
 }
 ?>
-<li class="lyuba__widget-product border mb-5 p-2">
+<li class="lyuba__widget-product border mb-5 p-2 col-12 col-sm-6 col-md-12">
 	<?php do_action( 'woocommerce_widget_product_item_start', $args ); ?>
     <a href="<?php echo esc_url( $product->get_permalink() ); ?>">
 		<?php echo $product->get_image( 'medium' ); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-        <p class="text-center"><?php echo wp_kses_post( $product->get_name() ); ?></p>
+        <p class="text-center mb-0"><?php echo wp_kses_post( $product->get_name() ); ?></p>
     </a>
 
-	<?php if ( ! empty( $show_rating ) ) : ?>
-        <span class="text-center">
-			<?php echo wc_get_rating_html( $product->get_average_rating() ); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-        </span>
-	<?php endif; ?>
+<!--	--><?php //if ( ! empty( $show_rating ) ) : ?>
+<!--        <span class="text-center">-->
+<!--			--><?php //echo wc_get_rating_html( $product->get_average_rating() ); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+<!--        </span>-->
+<!--	--><?php //endif; ?>
 
-    <div class="text-right m">
-		<?php echo $product->get_price_html(); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-    </div>
+<!--    <div class="text-right m">-->
+<!--		--><?php //echo $product->get_price_html(); // PHPCS:Ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+<!--    </div>-->
 
     <div class="d-flex justify-content-end pt-2">
         <a href="<?php echo get_the_permalink(); ?>" style="color: #55abf4;">Подробнее</a>

@@ -75,9 +75,10 @@ if ( post_password_required() ) {
 	         * @hooked woocommerce_upsell_display - 15
 	         * @hooked woocommerce_output_related_products - 20
 	         */
-	        remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products');
+//	        remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products');
+//	        remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs');
 	        do_action( 'woocommerce_after_single_product_summary' );
-	        ?>
+?>
         </div>
 
     </div>

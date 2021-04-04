@@ -1,7 +1,8 @@
 footer.site-footer
   padding-top: 40px
   //height: 320px
-  background-color: $color__orange
+  background-color: $color__background-footer
+  color: $color__text-footer
   .no-logo
     margin-top: 10px
   .list-unstyled
@@ -9,7 +10,7 @@ footer.site-footer
     margin-left: 0
     padding-left: 0
     a
-      color: #000
+      color: $color__text-footer
 
 
 .footer__contacts
@@ -24,7 +25,7 @@ footer.site-footer
     align-items: center
     a
       padding-left: 10px
-      color: #000 !important
+      color: $color__text-footer !important
   .footer__social
     display: flex
     flex-direction: row
@@ -54,12 +55,12 @@ footer.site-footer
     margin-right: 40px
 
   a
-    font-size: 20px
-    color: #000
+    font-size: 1rem
+    color: $color__text-footer
     text-decoration: none
     cursor: pointer
     &:visited
-      color: #000
+      color: $color__text-footer
     &:hover
-      color: #000
+      color: $color__text-footer
 

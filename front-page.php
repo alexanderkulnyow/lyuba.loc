@@ -52,7 +52,7 @@ get_header();
 
         <section class="row guide_block justify-content-center lyuba__guiede-bg">
             <style>
-                .lyuba__guiede-bg{
+                .lyuba__guiede-bg {
                     background: url('<?php echo nl2br( esc_html( get_theme_mod( 'lyuba__guiede-bg' ) ) )?>') no-repeat 100% 50% fixed;
                     background-size: cover
                 }
@@ -61,11 +61,11 @@ get_header();
             <div class="container">
                 <div class="row guide__content">
                     <div class="col-12 d-flex flex-column justify-content-center align-items-center">
-                        <h2 class="guide__header text-center wow animate__bounceInRight"><?php echo nl2br( esc_html( get_theme_mod( 'lyuba__guiede-title' ) ) )?></h2>
-                        <p class="guide__description text-center"><?php echo nl2br( esc_html( get_theme_mod( 'lyuba__guiede-description' ) ) )?></p>
+                        <h2 class="guide__header text-center wow animate__bounceInRight"><?php echo nl2br( esc_html( get_theme_mod( 'lyuba__guiede-title' ) ) ) ?></h2>
+                        <p class="guide__description text-center"><?php echo nl2br( esc_html( get_theme_mod( 'lyuba__guiede-description' ) ) ) ?></p>
 
                         <div class="guide__file guide__footer">
-                            <a href="<?php echo nl2br( esc_html( get_theme_mod( 'lyuba__guiede-file' ) ) )?>">Скачать</a>
+                            <a style="cursor: pointer" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Получить</a>
                         </div>
 
                     </div>
@@ -77,43 +77,43 @@ get_header();
 
 
         <section class="container wow slideInLeft" data-wow-duration="2s" data-wow-delay="5s">
-        <h2>Последние статьи</h2>
-        <div class="row post__wrapper">
+            <h2>Последние статьи</h2>
+            <div class="row post__wrapper">
 
-			<?php
+				<?php
 
 
-			// указываем категорию 9 и выключаем разбиение на страницы (пагинацию)
-			$query = new WP_Query( array(
-				'post_type'      => 'post',
-				'posts_per_page' => 5
-			) );
-			if ( $query->have_posts() ) {
-				while ( $query->have_posts() ) {
-					$query->the_post();
-					posts_card();
+				// указываем категорию 9 и выключаем разбиение на страницы (пагинацию)
+				$query = new WP_Query( array(
+					'post_type'      => 'post',
+					'posts_per_page' => 5
+				) );
+				if ( $query->have_posts() ) {
+					while ( $query->have_posts() ) {
+						$query->the_post();
+						posts_card();
 
+					}
+					if ( $query->max_num_pages > 1 ) :
+						?>
+                        <script>
+                            var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
+                            var true_posts = '<?php echo serialize( $query->query_vars ); ?>';
+                            var current_page = <?php echo ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1; ?>;
+                            var max_pages = '<?php echo $query->max_num_pages; ?>';
+                        </script>
+                        <!--                                    <div class="button-block row">-->
+						<?php
+						echo '<div id="true_loadmore" class="my-btn-green">Показать ещё</div>';
+
+						// сброс
+					endif;
+					wp_reset_postdata(); // сбрасываем переменную $post
+				} else {
+					echo 'Записей нет.';
 				}
-				if ( $query->max_num_pages > 1 ) :
-					?>
-                    <script>
-                        var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
-                        var true_posts = '<?php echo serialize( $query->query_vars ); ?>';
-                        var current_page = <?php echo ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1; ?>;
-                        var max_pages = '<?php echo $query->max_num_pages; ?>';
-                    </script>
-                    <!--                                    <div class="button-block row">-->
-					<?php
-					echo '<div id="true_loadmore" class="my-btn-green">Показать ещё</div>';
-
-					// сброс
-				endif;
-				wp_reset_postdata(); // сбрасываем переменную $post
-			} else {
-				echo 'Записей нет.';
-			}
-			?>
-        </div>
+				?>
+            </div>
         </section>
 
         <section class="row front__testimonials mt-5">
@@ -164,6 +164,22 @@ get_header();
         </section>
 
     </main>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Пробная версия Гайд</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+					<?php echo do_shortcode( '[contact-form-7 id="2553" title="Пробник гайд"]' ) ?>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 <?php
 get_footer();

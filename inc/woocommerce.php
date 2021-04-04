@@ -64,9 +64,9 @@ function uni_italy_woocommerce_setup() {
 			),
 		)
 	);
-	add_theme_support( 'wc-product-gallery-zoom' );
-	add_theme_support( 'wc-product-gallery-lightbox' );
-	add_theme_support( 'wc-product-gallery-slider' );
+//	add_theme_support( 'wc-product-gallery-zoom' );
+//	add_theme_support( 'wc-product-gallery-lightbox' );
+//	add_theme_support( 'wc-product-gallery-slider' );
 }
 
 
@@ -274,7 +274,7 @@ function uni_italy_single_product_registration() {
                     </button>
                 </div>
                 <div class="modal-body">
-                    <?php echo do_shortcode('[contact-form-7 id="2533" title="Гайд"]')?>
+                    <?php echo do_shortcode('[contact-form-7 id="2533" title="Заказ услуги"]')?>
 
                 </div>
             </div>
@@ -283,4 +283,38 @@ function uni_italy_single_product_registration() {
 	<?php
 }
 
+add_filter( 'woocommerce_page_title', 'theme_shop_page_title');
+function theme_shop_page_title( $page_title ) {
+	if( 'Товары' == $page_title) { // Заголовок который нужно изменить или убрать
+		return ""; // Здесь может быть заголовок главной страницы магазина
+	}
+}
 
+//function woocommerce_output_content_wrapper_1(){
+//	echo '<div id="primary" class="content-area container"><main class="site-main row" role="main">';
+//}
+//remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+//add_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper_1', 10);
+
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+add_filter( "woocommerce_before_widget_product_list", "edit_product_widget_list", 1, 1 );
+
+//$old_html contains -> <ul class="product_list_widget">
+function edit_product_widget_list ( $old_html ) {
+	return '<ul class="product_list_widget row">'; // change your class here
+}
+
+
+
+// not purchasable
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+remove_action( 'woocommerce_simple_add_to_cart', 'woocommerce_simple_add_to_cart', 30 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_simple_add_to_cart', 30 );
+remove_action( 'woocommerce_grouped_add_to_cart', 'woocommerce_grouped_add_to_cart', 30 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_arena_single_price', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_simple_add_to_cart', 30 );
+
+
+// not purchasable end

@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.25' );
+	define( '_S_VERSION', '1.0.288' );
 }
 add_filter( 'get_the_archive_title', function ( $title ) {
 	return preg_replace( '~^[^:]+: ~', '', $title );
@@ -143,7 +143,19 @@ function uni_italy_widgets_init() {
 			'after_title'   => '</h3>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Single_Prod', 'uni_italy' ),
+			'id'            => 'sidebar-2',
+			'description'   => esc_html__( 'Add widgets here.', 'uni_italy' ),
+			'before_widget' => '<section id="%1$s" class="widget widget_archive %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
 }
+
 
 add_action( 'widgets_init', 'uni_italy_widgets_init' );
 
@@ -340,8 +352,8 @@ function services_card() {
 						<?php the_excerpt(); ?>
                     </div>
                     <div class="services__card-footer align-self-end w-100">
-	                    <?php woocommerce_template_single_price(); ?>
-                        <a href="<?php echo get_the_permalink(); ?>" class="btn btn-services">Подробнее</a>
+<!--	                    --><?php //woocommerce_template_single_price(); ?>
+                        <a href="<?php echo get_the_permalink(); ?>" class="btn btn-services-1 w-100">Подробнее</a>
                     </div>
                 </div>
 
@@ -512,22 +524,27 @@ if ( ! function_exists( 'uni_italy_posted_on1' ) ) :
 endif;
 
 
-//function woocommerce_output_content_wrapper_1(){
-//	echo '<div id="primary" class="content-area container"><main class="site-main row" role="main">';
-//}
-//remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-//add_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper_1', 10);
 
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+function uni_italy_guide_sample() {
+	?>
+        <a style="cursor: pointer" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Получить</a>
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Пробная версия Гайд</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+					<?php echo do_shortcode('[contact-form-7 id="2553" title="Пробник гайд"]')?>
 
-// not purchasable
-remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
-remove_action( 'woocommerce_simple_add_to_cart', 'woocommerce_simple_add_to_cart', 30 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_simple_add_to_cart', 30 );
-remove_action( 'woocommerce_grouped_add_to_cart', 'woocommerce_grouped_add_to_cart', 30 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_arena_single_price', 10 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_simple_add_to_cart', 30 );
-// not purchasable end
+                </div>
+            </div>
+        </div>
+    </div>
+	<?php
+}
 

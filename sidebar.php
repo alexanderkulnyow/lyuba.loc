@@ -10,8 +10,23 @@
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
+
+if ( ! is_product() ) {
+    ?>
+    <aside id="secondary" class="widget-area">
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+    </aside><!-- #secondary -->
+    <?php
+} else {
+	?>
+    <aside id="secondary" class="widget-area">
+		<?php dynamic_sidebar( 'sidebar-2' ); ?>
+    </aside><!-- #secondary -->
+	<?php
+}
+
 ?>
 
-<aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+
+
+
