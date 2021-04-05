@@ -49,11 +49,8 @@
     "map": false
   },
   "browser-sync1": {
-
-      "proxy": "https://lyuba.loc"
-
+    "proxy": "https://lyuba.loc"
   },
-
   "scripts": {
     "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
     "serve": "browser-sync start --proxy \"https://lyuba.loc\" --port 3002   --https \"key: E:/Server/userdata/config/cert_files/localhost/localhost-server.key, cert: E:/Server/userdata/config/cert_files/localhost/localhost-server.crt\",\n            }, --reload-delay 4000 --files \"*.css, js/*.js, **/*.php, languages/*.pot, languages/*.po, !node_modules/**/*.html, !bower_components*.*\"",

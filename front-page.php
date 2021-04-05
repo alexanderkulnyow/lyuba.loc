@@ -65,7 +65,10 @@ get_header();
                         <p class="guide__description text-center"><?php echo nl2br( esc_html( get_theme_mod( 'lyuba__guiede-description' ) ) ) ?></p>
 
                         <div class="guide__file guide__footer">
-                            <a style="cursor: pointer" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Получить</a>
+                            <a class="btn btn-large-light"
+                               data-toggle="modal"
+                               data-target="#exampleModal"
+                               data-whatever="@mdo">Получить</a>
                         </div>
 
                     </div>

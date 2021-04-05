@@ -58,7 +58,7 @@
 <!--					--><?php //uni_italy_entry_footer1(); ?>
 				</div>
 
-				<a href="<?php echo get_permalink(); ?>" class="btn__blog__card__footer">Подробней</a>
+				<a href="<?php echo get_permalink(); ?>" class="btn btn-services-1">Подробней</a>
 			</div>
 		</div>
 	</div>

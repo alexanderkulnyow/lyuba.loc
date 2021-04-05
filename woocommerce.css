@@ -298,12 +298,10 @@ p.stars.selected a:not(.active)::before {
  * Forms
  */
 .form-row.woocommerce-validated input.input-text {
-  -webkit-box-shadow: inset 2px 0 0 #0f834d;
-          box-shadow: inset 2px 0 0 #0f834d; }
+  box-shadow: inset 2px 0 0 #0f834d; }
 
 .form-row.woocommerce-invalid input.input-text {
-  -webkit-box-shadow: inset 2px 0 0 #e2401c;
-          box-shadow: inset 2px 0 0 #e2401c; }
+  box-shadow: inset 2px 0 0 #e2401c; }
 
 .required {
   color: #f00; }
@@ -348,8 +346,7 @@ p.no-comments {
     z-index: 999999;
     left: -999em;
     display: block;
-    -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); }
   .site-header-cart:hover .widget_shopping_cart, .site-header-cart.focus .widget_shopping_cart {
     left: 0;
     display: block; } }
@@ -381,15 +378,13 @@ p.no-comments {
   cursor: ew-resize;
   outline: none;
   background: #6aad8e;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin-top: -0.25em;
   opacity: 1; }
   .widget_price_filter .ui-slider .ui-slider-handle:last-child {
     margin-left: -1em; }
   .widget_price_filter .ui-slider .ui-slider-handle:hover, .widget_price_filter .ui-slider .ui-slider-handle.ui-state-active {
-    -webkit-box-shadow: 0 0 0 0.25em rgba(0, 0, 0, 0.1);
-            box-shadow: 0 0 0 0.25em rgba(0, 0, 0, 0.1); }
+    box-shadow: 0 0 0 0.25em rgba(0, 0, 0, 0.1); }
 
 .widget_price_filter .ui-slider .ui-slider-range {
   position: absolute;
@@ -410,5 +405,3 @@ p.no-comments {
 .woocommerce-Price-amount {
   font-size: 1.4rem;
   font-weight: bold; }
-
-/*# sourceMappingURL=woocommerce.css.map */
