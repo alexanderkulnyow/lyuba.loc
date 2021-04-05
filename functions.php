@@ -50,6 +50,10 @@ if ( ! function_exists( 'uni_italy_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+
+		add_image_size( 'blog-thumbnails', 230, 170, true );
+
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
@@ -107,10 +111,6 @@ if ( ! function_exists( 'uni_italy_setup' ) ) :
 endif;
 
 add_action( 'after_setup_theme', 'uni_italy_setup' );
-
-if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'blog-thumbnails', 300, 260, true ); // 300 в ширину и без ограничения в высоту
-}
 
 
 /**
@@ -352,7 +352,7 @@ function services_card() {
 						<?php the_excerpt(); ?>
                     </div>
                     <div class="services__card-footer align-self-end w-100">
-<!--	                    --><?php //woocommerce_template_single_price(); ?>
+                        <!--	                    --><?php //woocommerce_template_single_price(); ?>
                         <a href="<?php echo get_the_permalink(); ?>" class="btn btn-services-1 w-100">Подробнее</a>
                     </div>
                 </div>
@@ -524,10 +524,9 @@ if ( ! function_exists( 'uni_italy_posted_on1' ) ) :
 endif;
 
 
-
 function uni_italy_guide_sample() {
 	?>
-        <a style="cursor: pointer" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Получить</a>
+    <a style="cursor: pointer" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Получить</a>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -539,7 +538,7 @@ function uni_italy_guide_sample() {
                     </button>
                 </div>
                 <div class="modal-body">
-					<?php echo do_shortcode('[contact-form-7 id="2553" title="Пробник гайд"]')?>
+					<?php echo do_shortcode( '[contact-form-7 id="2553" title="Пробник гайд"]' ) ?>
 
                 </div>
             </div>
